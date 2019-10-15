@@ -23,7 +23,7 @@ def create_model(args, maxlen, vocab):
 
     if args.emb_name:
         from w2vEmbReader import W2VEmbReader as EmbReader
-        emb_reader = EmbReader(os.path.join("..", "preprocessed_data", args.domain), args.emb_name)
+        emb_reader = EmbReader(os.path.join("..", "preprocessed_data", args.domain), "w2v_embedding")
         aspect_matrix = emb_reader.get_aspect_matrix(args.aspect_size)
         args.aspect_size = emb_reader.aspect_size
         args.emb_dim = emb_reader.emb_dim
